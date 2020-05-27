@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>visual basic &#8211; a2wd</title>
+	<atom:link href="https://a2wd.github.io/tag/visual-basic/feed/" rel="self" type="application/rss+xml" />
+	<link>http://a2wd.github.io/</link>
+	<description>code &#38; design</description>
+	<lastBuildDate>Sat, 29 Mar 2014 15:36:19 +0000</lastBuildDate>
+	<language>en-GB</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.4.1</generator>
+
+<image>
+	<url>https://a2wd.github.io/content/2016/12/cropped-logo512-32x32.png</url>
+	<title>visual basic &#8211; a2wd</title>
+	<link>http://a2wd.github.io/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Visual Basic Coding</title>
+		<link>https://a2wd.github.io/visual-basic-coding/</link>
+		
+		<dc:creator><![CDATA[#!]]></dc:creator>
+		<pubDate>Tue, 02 Jul 2013 19:43:00 +0000</pubDate>
+				<category><![CDATA[Code]]></category>
+		<category><![CDATA[distance]]></category>
+		<category><![CDATA[haversine]]></category>
+		<category><![CDATA[visual basic]]></category>
+		<guid isPermaLink="false">https://a2wd.github.io/?p=12</guid>
+
+					<description><![CDATA[Converting journey times to nodes in a traffic model I had a large data set of points from a GPS device (Garmin Nuvi) which needed matching up to nodes in a traffic model. Unfortunately the points on the GPS neither occur at exact node coordinates nor do they always even fall along the actual path [&#8230;]]]></description>
+										<content:encoded><![CDATA[<div id="page">
+<div id="title">
+<h2>Converting journey times to nodes in a traffic model</h2>
+</div>
+<div id="content">
+<p>I had a large data set of points from a GPS device (Garmin Nuvi) which needed matching up to nodes in a traffic model. Unfortunately the points on the GPS neither occur at exact node coordinates nor do they always even fall along the actual path of the road <a href="http://www.gps.gov/systems/gps/performance/accuracy/">(GPS can be accurate to only ~8m)</a></p>
+<p>To sort this out, I used Pythagoras&#8217; theorem on equirectangular projections (I had initially hoped to use the more accurate spherical law of cosines, but excel introduced a rounding error, even when specifying variables as doubles</p>
+<p>The code I came up with was as such:</p>
+<p>x = (lon2-lon1) * Math.cos((lat1+lat2)/2);</p>
+<p>y = (lat2-lat1);</p>
+<p>d = Math.sqrt(x*x + y*y) * R;</p>
+<p>With lat/lon 1 being the GPS point and lat/lon 2 being the node in our model, I could pinpoint the distance to the nearest node from this and then find the closest GPS point to each node, marking that up as the relevant datapoint and using the marked datapoints to calculate journey times along the route</p>
+</div>
+</div>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

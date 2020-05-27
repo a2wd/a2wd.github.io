@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>mobile &#8211; a2wd</title>
+	<atom:link href="https://a2wd.github.io/tag/mobile/feed/" rel="self" type="application/rss+xml" />
+	<link>http://a2wd.github.io/</link>
+	<description>code &#38; design</description>
+	<lastBuildDate>Tue, 15 Oct 2019 11:31:05 +0000</lastBuildDate>
+	<language>en-GB</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.4.1</generator>
+
+<image>
+	<url>https://a2wd.github.io/content/2016/12/cropped-logo512-32x32.png</url>
+	<title>mobile &#8211; a2wd</title>
+	<link>http://a2wd.github.io/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>That 300ms lag on mobile</title>
+		<link>https://a2wd.github.io/that-300ms-lag-on-mobile/</link>
+		
+		<dc:creator><![CDATA[#!]]></dc:creator>
+		<pubDate>Fri, 08 May 2015 12:02:42 +0000</pubDate>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[javascript]]></category>
+		<category><![CDATA[mobile]]></category>
+		<guid isPermaLink="false">https://a2wd.github.io/?p=250</guid>
+
+					<description><![CDATA[Fastclick.js An easy-win to improve UX responsiveness in mobile browsers Fastclick.js &#124; https://github.com/ftlabs/fastclick In mobile browsers, there is a perceptible 300ms delay between tapping and the click event firing. This is to allow for double-tapping and lends non-native apps a sluggish feel. The financial times developed a solution to this problem, fastclick.js. This javascript places [&#8230;]]]></description>
+										<content:encoded><![CDATA[<h1>Fastclick.js</h1>
+<p>An easy-win to improve UX responsiveness in mobile browsers</p>
+<h2>Fastclick.js | <a href="https://github.com/ftlabs/fastclick">https://github.com/ftlabs/fastclick</a></h2>
+<p>In mobile browsers, there is a perceptible 300ms delay between tapping and the click event firing. This is to allow for double-tapping and lends non-native apps a sluggish feel.</p>
+<p>The financial times developed a solution to this problem, fastclick.js. This javascript places an event listener on the body element and intercepts the initial tap, triggering an immediate click event.</p>
+<p>To use, the fastclick.js script must be included and the listener must be added to the body. For example:</p>
+<pre><code>&lt;script src="js/fastclick.js" type="application/javascript"&gt;
+&lt;script type="application/javascript"&gt;
+// &lt;![CDATA[
+window.addEventListener('load', function() { FastClick.attach(document.body) })
+// ]]&gt;&lt;/script&gt;</code></pre>
+<p>There are two caveats to this script:</p>
+<p>1. This disables double-tap to zoom (by nature, it disables double taps but pinch-to-zoom is still possible).</p>
+<p>2. Some older versions of iOS (earlier than v5.0) don’t allow touch event handlers to trigger focus on other elements (http://ftlabs.github.io/fastclick/examples/focus.html).</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Do I need jQuery?</title>
+		<link>https://a2wd.github.io/do-i-need-jquery/</link>
+		
+		<dc:creator><![CDATA[#!]]></dc:creator>
+		<pubDate>Sat, 29 Mar 2014 11:49:45 +0000</pubDate>
+				<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[Responsive]]></category>
+		<category><![CDATA[javascript]]></category>
+		<category><![CDATA[jQuery]]></category>
+		<category><![CDATA[menu]]></category>
+		<category><![CDATA[mobile]]></category>
+		<guid isPermaLink="false">https://a2wd.github.io/?p=103</guid>
+
+					<description><![CDATA[Having recently made an update to my respond theme for wordpress, I wanted to implement a mobile-targeted menu, taking into account that hover doesn&#8217;t work on smartphones and tablets. The two main options are an always-open menu or something triggered with javascript, whether that be a select field, a dropdown or a slider. Adopting a [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Having recently made an update to my <a title="Respond WordPress Theme" href="http://www.a2wd.com/dl/respond.zip">respond theme</a> for wordpress, I wanted to implement a mobile-targeted menu, taking into account that hover doesn&#8217;t work on smartphones and tablets.</p>
+<p>The two main options are an always-open menu or something triggered with javascript, whether that be a <a title="Select dropdown menu for mobile" href="http://css-tricks.com/convert-menu-to-dropdown/">select field</a>, a <a title="Dropdown mobile menu" href="http://astuteo.com/mobilemenu">dropdown</a> or a <a title="Berriart Sidr Menu - jQuery plugin" href="http://www.berriart.com/sidr/">slider</a>. Adopting a method of progressive enhancement, I load the page with the menu open and if javascript is enable then we can hide it and add an onClick() to a menu-toggle.</p>
+<p>&#8230;But do we need to use jQuery for one onClick() event? Although the ~30kb load jQuery adds might not be that big a deal, especially if you have any pictures, it does mean an extra uri to fetch and wait for and the main reason for this is mobile which won&#8217;t necessarily have a fast or unlimited data connection.</p>
+<p>It turns out I&#8217;m not the only one wondering this: <a title="You might not need jQuery" href="http://youmightnotneedjquery.com/">http://youmightnotneedjquery.com/</a></p>
+<p>The javascript to implement this is dead easy so I opted to add it to the page via a script tag in the footer. You can get the updated theme from <a title="Respond wordpress theme" href="www.a2wd.com/dl/respond.zip">www.a2wd.com/dl/respond.zip</a>, and see <a title="Information on Respond wordpress theme" href="https://a2wd.github.io/updated-theme/">this post</a> for installation instructions.</p>
+<p>Do I need jQuery?&#8230; Probably not.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>The need for responsive design</title>
+		<link>https://a2wd.github.io/the-need-for-responsive-design/</link>
+		
+		<dc:creator><![CDATA[#!]]></dc:creator>
+		<pubDate>Sat, 11 Jan 2014 12:50:00 +0000</pubDate>
+				<category><![CDATA[Design]]></category>
+		<category><![CDATA[Responsive]]></category>
+		<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[design]]></category>
+		<category><![CDATA[mobile]]></category>
+		<category><![CDATA[responsive]]></category>
+		<guid isPermaLink="false">https://a2wd.github.io/?p=48</guid>
+
+					<description><![CDATA[This website is responsive. There is one version of the content and depending on the size of your screen, it will render differently. If you&#8217;re browsing on a pc, try it now &#8211; stretch and shrink the width. This is the future of the web and it&#8217;s a good thing. As a web designer it&#8217;s [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>This website is responsive. There is one version of the content and depending on the size of your screen, it will render differently. If you&#8217;re browsing on a pc, try it now &#8211; stretch and shrink the width.</p>
+<p>This is the future of the web and it&#8217;s a good thing.</p>
+<p>As a web designer it&#8217;s important to consider your audience and how they&#8217;ll be accessing your site.  Last year (2013), 15% of internet users were accessing the web from mobile devices, according to a report published by consultancy KPCB.</p>
+<p>Mobile internet access will rise and as cheaper phones and networks allow more citiens of developing countries to access the internet on mobile, this trend will become exaggerated.</p>
+<p>Mobile design is important because the experience on a phone or tablet is so different from the desktop where a mouse and keyboard are to hand. The Mashable article linked to below highlights a number of ideas to follow but I think the key to building a good design is for a rapid testing-feedback loop and trying out the site on as many different devices as possible.</p>
+<p>Related reading:<br />
+<a href="http://alistapart.com/article/responsive-web-design/">&#8216;The&#8217; article on responsive design</a> (A list apart)<br />
+<a title="Trends in Mobile Internet" href="https://www.slideshare.net/kleinerperkins/kpcb-internet-trends-2013">Trends in Mobile Internet</a> (Consultancy KPCB)<br />
+<a title="Designing for mobile" href="http://mashable.com/2013/06/02/mobile-design-tips/">Designing for Mobile</a> (Mashable)</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

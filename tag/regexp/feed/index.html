@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>regexp &#8211; a2wd</title>
+	<atom:link href="https://a2wd.github.io/tag/regexp/feed/" rel="self" type="application/rss+xml" />
+	<link>http://a2wd.github.io/</link>
+	<description>code &#38; design</description>
+	<lastBuildDate>Sat, 29 Mar 2014 12:21:18 +0000</lastBuildDate>
+	<language>en-GB</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.4.1</generator>
+
+<image>
+	<url>https://a2wd.github.io/content/2016/12/cropped-logo512-32x32.png</url>
+	<title>regexp &#8211; a2wd</title>
+	<link>http://a2wd.github.io/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Regular Expressions</title>
+		<link>https://a2wd.github.io/8/</link>
+		
+		<dc:creator><![CDATA[#!]]></dc:creator>
+		<pubDate>Fri, 09 Aug 2013 19:13:00 +0000</pubDate>
+				<category><![CDATA[Code]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[regexp]]></category>
+		<guid isPermaLink="false">https://a2wd.github.io/?p=8</guid>
+
+					<description><![CDATA[The versatile tool for matching patterns I figured I should know a bit about regular expressions, so for a previous incarnation of the website, I coded the homepage so that it returned the titles of blogs with a link to the respective blog. In doing so, I found a couple of good resources for regular expressions: [&#8230;]]]></description>
+										<content:encoded><![CDATA[<div id="page">
+<div id="title">
+<h2>The versatile tool for matching patterns</h2>
+</div>
+<div id="content">
+<p>I figured I should know a bit about <a href="http://en.wikipedia.org/wiki/Regular_expression">regular expressions</a>, so for a previous incarnation of the website, I coded the homepage so that it returned the titles of blogs with a link to the respective blog.</p>
+<p>In doing so, I found a couple of good resources for regular expressions:</p>
+<ul>
+<li>A useful <a href="http://www.cheatography.com/davechild/cheat-sheets/regular-expressions/">cheat sheet</a></li>
+<li>An introductory <a href="http://regexone.com">primer/tutorial</a></li>
+<li>and <a href="http://regexpal.com/">a tool</a> for quickly testing regular expressions</li>
+</ul>
+<p>Now using regular expressions to match blog titles is neither the most efficient way nor is it considered best practice but the aim was to learn to use RegExp so I put together the following code which worked on a directory listing of the blog folder and then pulled the titles via a regexp match:</p>
+<pre><code>preg_match("/\&lt;title\&gt;a2wd \|(.*?)\&lt;\/title\&gt;/",$data,$title);</code></pre>
+<p><small>(this, in PHP).</small></p>
+<p>The main bit here is <code>/\&lt;title\&gt;a2wd \|(.*?)\&lt;\/title\&gt;/</code> which matches everything from the pipe in the title tag to the end of the title tag. It could have been changed to include the first part but that is the same for all pages.</p>
+</div>
+</div>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

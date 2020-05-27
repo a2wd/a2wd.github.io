@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>nato &#8211; a2wd</title>
+	<atom:link href="https://a2wd.github.io/tag/nato/feed/" rel="self" type="application/rss+xml" />
+	<link>http://a2wd.github.io/</link>
+	<description>code &#38; design</description>
+	<lastBuildDate>Sat, 29 Mar 2014 15:27:40 +0000</lastBuildDate>
+	<language>en-GB</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.4.1</generator>
+
+<image>
+	<url>https://a2wd.github.io/content/2016/12/cropped-logo512-32x32.png</url>
+	<title>nato &#8211; a2wd</title>
+	<link>http://a2wd.github.io/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>NATO Phonetic Alphabet Reference</title>
+		<link>https://a2wd.github.io/nato-phonetic-alphabet-reference/</link>
+		
+		<dc:creator><![CDATA[#!]]></dc:creator>
+		<pubDate>Fri, 11 Oct 2013 18:11:00 +0000</pubDate>
+				<category><![CDATA[Code]]></category>
+		<category><![CDATA[Javascript]]></category>
+		<category><![CDATA[alphabet]]></category>
+		<category><![CDATA[javascript]]></category>
+		<category><![CDATA[nato]]></category>
+		<category><![CDATA[reference]]></category>
+		<guid isPermaLink="false">https://a2wd.github.io/?p=24</guid>
+
+					<description><![CDATA[This is a little project in javascript to convert words to the NATO phonetic alphabet. To use it, simply type words (or just letters) in the box below. The idea for this project came when I was on the phone to some customer services department and had to spell my surname the line was crackly [&#8230;]]]></description>
+										<content:encoded><![CDATA[<div id="content">
+<p>This is a little project in javascript to convert words to the NATO phonetic alphabet. To use it, simply type words (or just letters) in the box below.</p>
+<p>The idea for this project came when I was on the phone to some customer services department and had to spell my surname the line was crackly and I had to resort to saying things like &#8216;P for &#8230;Potato?&#8221;, I thought it would be handy to have an easy reference for this kind of thing.</p>
+<form>
+<p>Text to convert: <input id="in" type="textbox" /></p>
+<p>
+Result: <span id="out" style='border-bottom:1px dotted grey;'>Loading&#8230;</span></p>
+</form>
+<p>An earlier version achieved this with jQuery but <a href="https://a2wd.github.io/do-i-need-jquery/">I didn&#8217;t believe it was totally necessary</a> so you can now find this revised version with vanilla javascript</p>
+<p><script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function(){
+  var nato = ["Alpha", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf", "Hotel", "India", "Juliet", "Kilo", "Lima", "Mike", "November", "Oscar", "Papa", "Quebec", "Romeo", "Sierra", "Tango", "Uniform", "Victor", "Whiskey", "X-ray", "Yankee", "Zulu"];
+  var el = document.getElementById('out');
+  if(el.textContent !== 'undefined')
+  {
+    el.textContent = "";
+  }
+  else
+  {
+    el.innerText = "";
+  }</p>
+<p>  document.getElementById('in').onkeyup = function(){
+      var output = "";
+      if(this.value !== "")
+      {
+        var w = this.value.toUpperCase();
+        for(i=0;i<this.value.length;i++)
+        {
+          var x = w.charCodeAt(i);
+          if((x>=65) && (x<=90))
+          {
+            output += nato[x-65] + " ";
+          }
+          else
+          {
+            output += this.value[i] + " ";
+          }
+        }
+      }
+      var el = document.getElementById('out');
+      if(el.textContent !== 'undefined')
+      {
+        el.textContent = output;
+      }
+      else
+      {
+        el.innerText = output;
+      }
+    };
+});
+</script></p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

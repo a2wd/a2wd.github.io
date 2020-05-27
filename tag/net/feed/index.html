@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>.net &#8211; a2wd</title>
+	<atom:link href="https://a2wd.github.io/tag/net/feed/" rel="self" type="application/rss+xml" />
+	<link>http://a2wd.github.io/</link>
+	<description>code &#38; design</description>
+	<lastBuildDate>Thu, 22 Jan 2015 14:09:37 +0000</lastBuildDate>
+	<language>en-GB</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.4.1</generator>
+
+<image>
+	<url>https://a2wd.github.io/content/2016/12/cropped-logo512-32x32.png</url>
+	<title>.net &#8211; a2wd</title>
+	<link>http://a2wd.github.io/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Howto: Make changes to DropDownList items values &#038; display text.</title>
+		<link>https://a2wd.github.io/howto-make-changes-to-dropdownlist-items-values-display-text/</link>
+		
+		<dc:creator><![CDATA[#!]]></dc:creator>
+		<pubDate>Thu, 22 Jan 2015 13:03:37 +0000</pubDate>
+				<category><![CDATA[.net]]></category>
+		<category><![CDATA[ASP]]></category>
+		<category><![CDATA[VB]]></category>
+		<guid isPermaLink="false">https://a2wd.github.io/?p=242</guid>
+
+					<description><![CDATA[Visual Basic (VB.net) &#38; ASP.net For a recent project I am dynamically binding a DropdDownList to a datasource (in this instance, a DataTable returned from SQL Server). The user needed to see a series of formatted strings (the index column) in the DropDownList but I couldn&#8217;t find anything on how to do this. The index [&#8230;]]]></description>
+										<content:encoded><![CDATA[<ul>Visual Basic (VB.net) &amp; ASP.net</ul>
+<p>For a recent project I am dynamically binding a DropdDownList to a datasource (in this instance, a DataTable returned from SQL Server).</p>
+<p>The user needed to see a series of formatted strings (the index column) in the DropDownList but I couldn&#8217;t find anything on how to do this. The index returned from the SQL database held the item number and I needed to transform that into &#8220;No.:xxxxxx&#8221; with five digits of zero-padding.</p>
+<p>My first approach was to modify the DataTable prior to DataBinding by adding a column with an expression:</p>
+<pre>DataTable.Columns.Add("FormattedIndex", Type.GetType("System.String"), "'No.:'+Index")</pre>
+<p>(The third parameter is the expression).</p>
+<p>But the <a href="https://msdn.microsoft.com/en-us/library/system.data.datacolumn.expression%28v=vs.110%29.aspx">DataTable Expression</a> property doesn&#8217;t have any functions for handling number-formatting.</p>
+<p>The alternative and working solution was to modify the DropDownList via the DataBound method:</p>
+<pre>Private Sub DropDownList_DataBound(sender As Object, e As EventArgs) Handles DropDownList.DataBound
+ 'Rewrite text of items to include "No.:" prefix and 5-digit zero-padding
+ For Each Item As ListItem In sender.Items
+ Item.Text = String.Format("No.:{0:D5}", Integer.Parse(Item.Text))
+ Next
+End Sub</pre>
+<p>And iterate through the ListItems being bound. One thing to note, many developers prefer to insert an item at index 0 with &#8220;Please Select&#8221; (as per):</p>
+<pre>DropDownList.Items.Insert(0, New ListItem("Please Select", ""))</pre>
+<p>This works fine with the above if DropDownList.DataBind() is called before the Insert()</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

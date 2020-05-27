@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Stylesheets &#8211; a2wd</title>
+	<atom:link href="https://a2wd.github.io/category/design/stylesheets/feed/" rel="self" type="application/rss+xml" />
+	<link>http://a2wd.github.io/</link>
+	<description>code &#38; design</description>
+	<lastBuildDate>Sat, 29 Mar 2014 12:16:01 +0000</lastBuildDate>
+	<language>en-GB</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.4.1</generator>
+
+<image>
+	<url>https://a2wd.github.io/content/2016/12/cropped-logo512-32x32.png</url>
+	<title>Stylesheets &#8211; a2wd</title>
+	<link>http://a2wd.github.io/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>LESS &#038; Stylesheets</title>
+		<link>https://a2wd.github.io/less-stylesheets/</link>
+		
+		<dc:creator><![CDATA[#!]]></dc:creator>
+		<pubDate>Sun, 02 Feb 2014 21:48:04 +0000</pubDate>
+				<category><![CDATA[Stylesheets]]></category>
+		<category><![CDATA[css]]></category>
+		<category><![CDATA[less]]></category>
+		<category><![CDATA[sass]]></category>
+		<guid isPermaLink="false">https://a2wd.github.io/?p=68</guid>
+
+					<description><![CDATA[Having used a couple of different web design frameworks, I&#8217;d come across LESS but had not taken the time to properly understand it till now and really, can&#8217;t understand why it wasn&#8217;t till 2009 that it appeared (or 2007, for the original, SASS). The website for the language is at http://www.lesscss.org/ though for a really good overview, [&#8230;]]]></description>
+										<content:encoded><![CDATA[<p>Having used a couple of different web design frameworks, I&#8217;d come across LESS but had not taken the time to properly understand it till now and really, can&#8217;t understand why it wasn&#8217;t till 2009 that it appeared (or 2007, for the original, SASS).</p>
+<p>The website for the language is at <a title="LESS CSS Website" href="http://www.lesscss.org/">http://www.lesscss.org/</a> though for a really good overview, I can recommend the <a title="LESS Wikipedia Article" href="http://en.wikipedia.org/wiki/LESS_(stylesheet_language)">wikipedia article on LESS</a>.</p>
+<p>In a nutshell, with CSS you&#8217;ll be repeating the same thing again and again. For instance:</p>
+<p><code>#header<br />
+{<br />
+background-color:#fcfcfc;<br />
+color:#313131;<br />
+}<br />
+h1<br />
+{<br />
+background-color:#fcfcfc;<br />
+color:#313131;<br />
+}</code></p>
+<p>but with LESS you can just use a variable:</p>
+<p><code>@bg: #fcfcfc;<br />
+@fg: #313131;</code></p>
+<p><code>#header<br />
+{<br />
+background-color: @bg;<br />
+color: @fg;<br />
+}<br />
+h1<br />
+{<br />
+background-color: @bg;<br />
+color: @fg;<br />
+}</code></p>
+<p>Repeated over a whole stylesheet, this can lead to considerable savings in space and coding time. It also means that changing all the colours in one go is as simple as changing the variable.</p>
+<p>The other main features worth noting are <strong>mixins</strong>, where you can embed a whole set of properties into different CSS rules and the ability to use algebra in setting values.</p>
+<p>A LESS stylesheet can&#8217;t be read by a browser but can be interpreted either client-side or server-side by javascript code in the browser or a program on the web server, though for speed, in a production setting I would opt for compiling and minifying before release.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>
